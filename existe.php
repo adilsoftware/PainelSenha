@@ -2,9 +2,9 @@
 $us = $_GET["usuario"];
 
 $servidor = "pdb41.awardspace.net";
-$usuario = "3639130_adilsoftware";
-$senha = "ad81guilherme";
-$dbname = "3639130_adilsoftware";
+$usuario = "";
+$senha = "";
+$dbname = "";
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $dbname);
 $query = "select * from tbusuario where usuario = {$us}";
