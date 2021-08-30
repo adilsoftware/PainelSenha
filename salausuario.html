@@ -1,0 +1,18 @@
+<?php
+session_start();
+echo $_SESSION['usuario'];
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sala do usuario</title>
+</head>
+<body>
+
+<h1>OLA USUARIO BEM VINDO</h1><br>
+<p>nome...: </p><span><?php echo $usuario; ?></span>
+
+
+</body>
+</html>

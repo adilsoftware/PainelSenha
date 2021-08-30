@@ -1,0 +1,199 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html translate="no">
+<head>
+	<meta charset="utf-8">
+	<title>Adilsoftware</title>
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		div#preloader { position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: visible; background: white no-repeat center center; }
+	</style>
+
+
+	<script type="text/javascript">
+		var WaComponentContext = {};
+	</script>
+
+</head>
+<body>
+	<div id="preloader"></div>
+	<a id="wa-anchor-top"></a>
+	<div id="wa-container-wrapper-kou6wfpy4xvxu8" >
+		<div id="wa-container-kou6wfpy4xvxu8" class="container  " >
+			<div id="wa-row-korlqzwf6b7vco" class="row row-align ">
+				<div class="wa-subcontainer-wrapper  col-xs-12 col-sm-12 col-md-12 col-lg-12 " >
+					<div id="wa-sub-container-kou6wfpy4xw5k0">
+						<div id="wa-row-korlqzwf6b7w3c" class="row row-align ">
+							<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 " >
+								<div id="wa-comptext-korlqzwf54pa8w" class="wa-comptext clearfix">
+									<p style="line-height: 0.79;"><span style="font-family: 'Patua One', Arial, Helvetica, 'Liberation Sans', FreeSans, sans-serif; color: #000000; font-size: 40px;">Rede Mercado</span></p>
+									<p style="line-height: 0.79;"><span style="font-size: 25px; font-family: 'Homemade Apple', Arial, Helvetica, 'Liberation Sans', FreeSans, sans-serif; color: #c71b1b;">Fatisfação em atender</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="wa-container-wrapper-kou6wfpz4xw05k" >
+		<div id="wa-container-kou6wfpz4xw05k" class="container  " >
+			<div id="wa-row-korlqzwf6b7wzc" class="row row-align ">
+				<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 " >
+					<div id="wa-comptext-kou02grw53wb68" class="wa-comptext clearfix">
+						<p style="text-align: center;"><span style="font-size: 30px;"><strong style="color: #ffffff; text-align: center; line-height: 1.43;"><span style="font-family: Arvo, Arial, Helvetica, 'Liberation Sans', FreeSans, sans-serif;"><span style="color: #ffc619;">ÚLTIMA</span></span></strong><strong style="color: #ffffff; text-align: center; line-height: 1.43;"><span style="font-family: Arvo, Arial, Helvetica, 'Liberation Sans', FreeSans, sans-serif;">CHAMADA</span></strong></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="wa-container-wrapper-kou6wfq04xw40g" >
+		<div id="wa-container-kou6wfq04xw40g" class="container  " >
+			<div id="wa-row-korlqzwf6b7vnc" class="row row-align ">
+				<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 " >
+					<html translate="no">
+															<head>
+															
+															<meta charset="utf-8">
+															<meta name="viewport" content="width=device-width, initial-scale=1">
+															<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+															<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+															<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+															<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+															
+															                
+															<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+															        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+															        crossorigin="anonymous"></script>
+															<script>
+															                                                                                                                        
+															function temporizador() {
+															      
+                                                                                                                        setInterval (function() {
+															/*inicio da chamada*/
+															
+                                                                                                                         
+															$.ajax({
+															method: "GET", 
+															url: "ajax/senha.php",
+															success: function(result){
+															$("#senha").html(result);
+															}});
+					
+															 /*inicio da chamada*/
+															var senhaatual = document.getElementById("senha").innerHTML;
+																var senhaminha = document.getElementById("minha").innerHTML;
+																if (((senhaminha - senhaatual) <= 2) && ((senhaminha - senhaatual) >0)) {
+																	var audioChamada = $("#audioChamada");
+																	audioChamada.trigger("play");
+																	alert("Vá para fila, está chegando sua vez");
+																	return false;
+																}else if (senhaminha === senhaatual) {
+																	var audioChamada = $("#audioChamada");
+																	audioChamada.trigger("play");
+																		alert("corra já te chamou"); 
+																		return false;
+																	}
+															/*fim da chamada*/
+					
+					
+															}, 5000);
+															} 
+															</script>
+															
+
+					
+					
+					
+					</head>
+					
+															
+															
+															
+															<body onload='temporizador()'>
+															
+															<p  style="text-align: center;"> <span style="font-family: Arvo, Arial, Helvetica, 'Liberation Sans', FreeSans, sans-serif; font-size: 30px;"><strong>N.<span style="color: rgb(255, 198, 25); line-height: 2.8; " text-align: center; id="senha" >Carregando...</span></strong></span></a>
+															
+					
+																<button id=""  type="button" class="btn btn-danger" align-items: style="width: 100%; height: 70px; font-size: 30px" ><span style="color: rgb(255, 198, 25)"><b>SUA</span> <span style="color: rgb(255, 255, 255)" >SENHA</b></span></button><br>
+																<form name="formCadastro">
+																	
+																	<br>
+														
+																
+																
+																<p  style="text-align: center;"> <span style="font-family: Arvo, Arial, Helvetica, 'Liberation Sans', FreeSans, sans-serif; font-size: 30px;"><strong>N.<span style="color: rgb(255, 198, 25); line-height: 2.8; " text-align: center; id="minha" ><?php echo $_SESSION['novasenha'];?></span></strong></span></a>
+																
+																	<br>
+															</form>
+								
+
+                                                                
+															<script>
+																document.getElementById("myBtn").addEventListener("click", function() { 
+																	var nome=prompt("Digite sua senha");
+																	
+																	with(document.formCadastro) {
+																		minha.value=nome;	     
+																		document.getElementById("minha").innerHTML = nome;
+																	}
+																});
+																</script>
+																
+					
+
+
+															    <audio id="audioChamada" src="audio/chamada.wav"></audio>
+																
+															</body>
+
+															
+					
+															
+																</html></div>
+			</div>
+			<div class="wa-container-vspacer col-xl-12"></div>
+			<div id="wa-row-korlqzwf6b7we0" class="row row-align ">
+			</div>
+		</div>
+	</div>
+	<div id="wa-container-wrapper-kou6wfq14xw0xc" >
+		<div id="wa-container-kou6wfq14xw0xc" class="container  " >
+			<div id="wa-row-korlqzwf6b7xa0" class="row row-align ">
+			</div>
+		</div>
+	</div>
+	<a id="wa-anchor-bottom"></a>
+	<link rel="stylesheet" href="wa_bootstrap/css/bootstrap.min.48.css"/>
+	<link rel="stylesheet" href="wa_general.48.css"/>
+	<link rel="stylesheet" href="wa_style_global.16.css"/>
+	<link rel="stylesheet" href="wa_webfont_global.16.css"/>
+	<link rel="stylesheet" href="wa_css/pages-page4.309.css"/>
+	<script>
+		document.getElementById("preloader").style.display = 'none';
+	</script>
+	<script src="wa_bootstrap/js/jquery.min.js?v=48" ></script>
+	<script type="text/javascript">var wa$ = jQuery.noConflict()</script>
+	<script src="wa_js/wa_bootstrap_util.js?v=48" ></script>
+	<script src="wa_bootstrap/js/bootstrap.min.js?v=48" ></script>
+	<script src="wa_js/waVariables_en.js?v=18" ></script>
+	<script>
+		WaContext.app_version="1.2.0"
+		WaContext.app_revision="32f7385"
+		WaContext.preview=false
+		WaPageContext.lang="en"
+	</script>
+	<script src="wa_js/jquery.validate.min.js?v=48" ></script>
+	<script src="wa_js/wa_common.js?v=48" ></script>
+	<script src="wa_js/parallax.js?v=48" ></script>
+</body>
+</html>

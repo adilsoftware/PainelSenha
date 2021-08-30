@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animation</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  
+</head>
+
+<script>
+																								
+  function esconder() {
+        $('#load').hide();
+  } 
+  																						
+  function mostrar() {
+
+    with(document.form2) {
+                    var user = identificacao.value;	         
+                    }
+          $.ajax({
+              method: "GET", 
+              url: "existe.php?usuario="+user,
+              success: function(result){
+                var num = result;
+                if(num == "Identificação já existente"){
+
+                        window.location.href = "salausuario.php";
+                    }else{
+                        alert('Identificação não cadastrada');
+                    }
+              }});
+ } 
+
+  </script>
+
+<body onload='esconder()'>
+
+
+
+  <div id="modal" class="animar">
+    <h1>Login</h1>
+    <form name="form2"   enctype="multipart/form-data" ></form>
+        <label>Identificação</label>
+        <input  type="text" id="identificacao" name="identificacao"></input>
+        <button id="ativar" onclick="mostrar()">Entrar</button>
+        <label data-toggle="modal" data-target="#myModal">Criar novo cadastro</label>
+  </form>
+  </div>
+  
+
+  <div id="load"></div>
+
+  <script src="./script.js"></script>
+</body>
+
+
+<div class="container">
+  <!-- Button to Open the Modal -->
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">CADASTRO DE USUÁRIO</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          
+          <div class="modal-body">
+            <form name="form1" method="POST" onsubmit="return valida()" action="salvarusuario.php"  enctype="multipart/form-data" >
+              
+              <div class="form-group">
+              <label for="recipient-name" class="control-label">Identificação:</label>
+              <input name="usuario" type="number"  placeholder="Cpf ou fone" class="form-control" id="usuario" required>
+              <p id="div1"></p>
+              </div>
+              
+              <script>
+
+function valida() {
+      with(document.form1) {
+        if (document.getElementById("div1").innerHTML == "Identificação já existente"){
+           alert("Esta identificação já existe, favor troca-lá");
+           return false;
+
+        }else{
+          return true;	
+        }
+}
+}
+
+              function Mostra() {
+                
+                with(document.form1) {
+                    var user = usuario.value;	         
+                    }
+
+                $.ajax({
+                    method: "GET", 
+                    url: "existe.php?usuario="+user,
+                    success: function(result){
+                      $('#div1').html(result);
+                    }});
+              
+              }
+              </script>
+
+              <div class="form-group">
+              <label for="message-text" class="control-label">Nome:</label>
+              <input name="nome" type="text" class="form-control" id="nome" onFocus="Mostra()" required></textarea>
+              </div>
+    
+              <label for="message-text" class="control-label">Foto:</label><br>
+                <div class="custom-file mb-3">
+                  <input type="file" class="custom-file-input" id="customFile" name="file">
+                  <label class="custom-file-label" for="customFile"></label>
+                </div>
+
+                
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-danger">Salvar</button>
+                                   
+            </form>
+            </div>
+        </div>
+
+
+                 
+        
+<script>
+	// Add the following code if you want the name of the file appear on select
+	$(".custom-file-input").on("change", function() {
+	  var fileName = $(this).val().split("\\").pop();
+	  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+	});
+</script>
+
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+</html>
