@@ -1,8 +1,8 @@
 <?php
 $servidor = "pdb41.awardspace.net";
-$usuario = "3639130_adilsoftware";
-$senha = "ad81guilherme";
-$dbname = "3639130_adilsoftware";
+$usuario = "";
+$senha = "";
+$dbname = "";
 
 $conexao2 = mysqli_connect($servidor, $usuario, $senha, $dbname);
 $query2 = "select * from senhaqrcode where id = 1";
