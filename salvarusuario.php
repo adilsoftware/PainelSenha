@@ -6,9 +6,9 @@ $nome = $_POST["nome"];
 
 
 $servidor = "pdb41.awardspace.net";
-$usuario = "3639130_adilsoftware";
-$senha = "ad81guilherme";
-$dbname = "3639130_adilsoftware";
+$usuario = "";
+$senha = "";
+$dbname = "";
 
 
  
